@@ -63,7 +63,7 @@ const Header = (props)=>{
     //     setValue(value);
     // }
     return(
-        <AppBar position="static">
+        <AppBar position="sticky">
         <Toolbar className="Header"  style={{backgroundColor: COLOURS.darkBlue }}>
             <Typography className="Logo" variant="h5" noWrap>ShamysCraft.com</Typography>
             <div className="Search" variant="contained">

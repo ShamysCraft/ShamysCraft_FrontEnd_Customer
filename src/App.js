@@ -38,6 +38,7 @@ function App() {
     <ThemeProvider theme={theme}>
     <div className="App" style={{backgroundColor: COLOURS.darkWhite}}>
       <Header/>
+      <div></div>
         <div className="container">
         </div>
         <div className="BodyContainer">
@@ -65,6 +66,12 @@ function App() {
             </Route>S
             <Route path="/signinup">
               <SignUpLoginPage />
+            </Route>
+            <Route path="/shopSales">
+              <SalesPage/>
+            </Route>
+            <Route path="/itemPage">
+              <ViewItemPage/>
             </Route>
           </Switch>
           </Body>

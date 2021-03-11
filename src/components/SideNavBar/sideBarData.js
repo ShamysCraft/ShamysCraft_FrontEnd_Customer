@@ -1,10 +1,9 @@
 
-import React from 'react'
 //array of objects
 export const sideBarData = [
     {
         title: "Pottery",
-        link: "/"
+        link: "/",
     },
     {
         title: "Jwellery",

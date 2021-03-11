@@ -16,6 +16,9 @@ body{
 
 .Body{
   background-color: aliceblue;
+  width: 1000px ;
+  height: 100%;
+  
 }
 
 div.Search{
@@ -44,20 +47,24 @@ div.Search{
 .sideNavBar{
   background-color: white;
   width: 20%;
+  
+  
 }
 
 .content
 {
   width: 80%;
- background-color: blue;
+ background-color: lightseagreen;
 }
 
 .rightNavBar{
   width: 20%;
-  background-color: peru;
+  background-color: white;
+  justify-self: end;
 }
 
 .sidebar{
+  position: fixed;
   height: 60%;
   width: 200px ;
   background-color: #F4F3F3;
@@ -99,3 +106,19 @@ align-items: center;
   place-items: center;
   padding: 20px;
 }
+
+#rightNav{
+  margin-left: 70px;
+}
+
+/* Item */
+.record{
+  margin: 10px;
+} 
+
+.record{
+ 
+}  
+
+
+
