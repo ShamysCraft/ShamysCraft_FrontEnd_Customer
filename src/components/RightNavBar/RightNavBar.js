@@ -12,7 +12,8 @@ function RightNavBar() {
                         <li key={key}
                         className="row"
                         >
-                            <Link to={`${val.link}`} >
+                            <Link style={{textDecoration:'none'}} to={`${val.link}`} 
+                            >
                             {""}
                             <div id="title">
                                 {val.title}

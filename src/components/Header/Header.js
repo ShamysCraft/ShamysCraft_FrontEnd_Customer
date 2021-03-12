@@ -98,7 +98,7 @@ const Header = (props)=>{
                 >
                 <MenuItem onClick={handleClose1}>Profile</MenuItem>
                 <MenuItem onClick={handleClose1}>My account</MenuItem>
-                <MenuItem onClick={handleClose1} component={Link} to ='/signinup'>Sign In</MenuItem>
+                <MenuItem onClick={handleClose1} component={Link} to ='/signin'>Sign In</MenuItem>
             </Menu>
             </div>
             {/* <Button disableRipple endIcon = {<ProfileIcon className="icons"/>} component={Link} to ='/account' variant="contained" color="primary">Go to Account </Button> */}

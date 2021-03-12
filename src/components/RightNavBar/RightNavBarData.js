@@ -1,6 +1,6 @@
 export const RightNavBarData = [
     {
-        title :"Shop",
+        title :"Visit Shop",
         link : "/shop"
     },
     {

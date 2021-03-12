@@ -15,10 +15,7 @@ function Item(props) {
                 container 
                 direction="row"
                 justify="center"
-                alignItems="center"
-                item xs={12} spacing={3}
-                className="hi"
-                >
+                alignItems="center">
             
             {ItemData.map((val,key)=>{
             return(

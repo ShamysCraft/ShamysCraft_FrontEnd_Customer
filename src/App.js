@@ -7,7 +7,8 @@ import {makeStyles, ThemeProvider} from '@material-ui/core/styles'
 import theme from "./theme/theme"
 //import all the pages
 //common
-import SignUpLoginPage from "./containers_webPages/User_Seller/signUp_LoginPage"
+import SignUp from "./containers_webPages/User_Seller/signUp"
+import LoginPage from "./containers_webPages/User_Seller/LoginPage"
 import HomePage from "./containers_webPages/User_Seller/HomePage"
 
 //user
@@ -37,7 +38,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App" style={{backgroundColor: COLOURS.darkWhite}}>
-      <Header/>
+      <Header />
       <div></div>
         <div className="container">
         </div>
@@ -64,8 +65,11 @@ function App() {
             <Route path="/help">
               <HelpPage/>
             </Route>S
-            <Route path="/signinup">
-              <SignUpLoginPage />
+            <Route path="/signup">
+              <SignUp/>
+            </Route>
+            <Route path="/signin">
+              <LoginPage/>
             </Route>
             <Route path="/shopSales">
               <SalesPage/>
