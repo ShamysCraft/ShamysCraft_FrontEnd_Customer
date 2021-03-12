@@ -96,8 +96,8 @@ const Header = (props)=>{
                 onClose={handleClose1}
                 style={{top:'50px',left: '25px'}}
                 >
-                <MenuItem onClick={handleClose1}>Profile</MenuItem>
-                <MenuItem onClick={handleClose1}>My account</MenuItem>
+                <MenuItem onClick={handleClose1} component={Link} to ='/profile'>Profile</MenuItem>
+                <MenuItem onClick={handleClose1}>My Orders</MenuItem>
                 <MenuItem onClick={handleClose1} component={Link} to ='/signin'>Sign In</MenuItem>
             </Menu>
             </div>

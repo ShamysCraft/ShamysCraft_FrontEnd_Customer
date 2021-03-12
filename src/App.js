@@ -56,6 +56,9 @@ function App() {
             <Route path="/becomeSeller">
               <BecomeSellerPage/>
             </Route>
+            <Route path="/addItem">
+              <AddItemPage/>
+            </Route>
             <Route exact path="/cart">
               <CartPage/>
             </Route>
@@ -73,6 +76,9 @@ function App() {
             </Route>
             <Route path="/shopSales">
               <SalesPage/>
+            </Route>
+            <Route path="/shop">
+              <ShopPage/>
             </Route>
             <Route path="/itemPage">
               <ViewItemPage/>

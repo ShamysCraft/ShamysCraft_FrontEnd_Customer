@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 import {
     Card,
     CardActionArea,
@@ -11,15 +11,14 @@ import {
     Grid
             } from "@material-ui/core"
 function ItemCard(props) {
+
+    
     return (
         
             <Card className="record"   style={{width: "300px"}} >
             <ul >
                 <div className="item" >
-                <li key={props.key} style={{listStyle:"none"}}>
-                
-                <Link to={{pathname:'/itemPage'}} >
-                    
+                <li key={props.key} style={{listStyle:"none"}}>  
                 <CardContent >
                     <CardMedia image='src\assets\pot.jpg'/>
                     <Typography variant="h5" noWrap>
@@ -28,8 +27,11 @@ function ItemCard(props) {
                     <Typography>
                         LKR {props.price}
                     </Typography>
+                    <Typography>
+                        {props.stock}
+                    </Typography>
                 </CardContent>
-                </Link>
+                
                 </li>
                 </div>
             </ul>
