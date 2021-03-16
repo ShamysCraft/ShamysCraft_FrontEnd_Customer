@@ -83,6 +83,9 @@ function App() {
             <Route path="/itemPage">
               <ViewItemPage/>
             </Route>
+            <Route path="/pendingOrder">
+              <PendingOrderPage/>
+            </Route>
           </Switch>
           </Body>
             </div> 

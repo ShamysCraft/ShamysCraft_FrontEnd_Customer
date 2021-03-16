@@ -7,6 +7,7 @@ import {
     CardActionArea,
     CardMedia,
     Grid,
+    MenuItem,
     TextField,
     Typography,
     Container,
@@ -18,6 +19,21 @@ import {
 
 import {makeStyles} from "@material-ui/core/styles"
 import {} from "@material-ui/icons"
+
+const categories = [
+    {
+        title : 'pottery'
+    },
+    {
+        title : 'Wood Art'
+    },
+    {
+        title : 'Paper Craft'
+    },
+    {
+        title : 'Wool'
+    }
+]
 
 const useStyles = makeStyles((theme)=>({
     qtybtn:{
@@ -39,6 +55,7 @@ const AddItemPage = (props)=>{
     const [count,setCount] = useState(0)
     const [file,setFile] =  useState("")
     const [text, setText] = useState("")
+    const [price, setprice] = useState(0)
     function handleChange(e){
         let url = URL.createObjectURL(e.target.files[0])
         setFile(url)
@@ -65,13 +82,34 @@ const AddItemPage = (props)=>{
                     variant="standard"
                     margin="normal"
                     required
+                    id="Category"
+                    select
+                    label="Category"
+                    
+                    name="Category"
+                    fullWidth
+                    onChange={event => setText(event.target.value)}
+                >
+                    {categories.map((option)=>(
+                        <MenuItem key={option.title} value={option.title}>
+                                {option.title}
+                        </MenuItem>
+                    ))}
+                </TextField>
+                <TextField
+                    variant="standard"
+                    margin="normal"
+                    required
                     id="Price"
+                    value="LKR"
                     label="Price Per Item"
                     name="Price"
                     autoComplete="Price"
                     autoFocus
                     type="number"
+                    InputProps={{inputProps:{min:0}}}
                     onChange={event => setText(event.target.value)}
+                    
                 />
                 <TextField
                     variant="outlined"
@@ -82,7 +120,7 @@ const AddItemPage = (props)=>{
                     id="Description"
                     label="Description"
                     name="Description"
-                    placeholder="LKR"
+                    placeholder=""
                     autoComplete="Description"
                     autoFocus
                     fullWidth
@@ -90,9 +128,8 @@ const AddItemPage = (props)=>{
 
                 />
                 <TextField
-                    id="outlined-full-width"
+                    id="outlined"
                     label="Image Upload"
-                    style={{ margin: 8 }}
                     name="upload-photo"
                     type="file"
                     fullWidth

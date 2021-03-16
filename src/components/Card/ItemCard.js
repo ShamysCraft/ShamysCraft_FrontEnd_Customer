@@ -9,34 +9,33 @@ import {
     Button,
     Typography,
     Grid
-            } from "@material-ui/core"
+} from "@material-ui/core"
 function ItemCard(props) {
 
-    
+
     return (
-        
-            <Card className="record"   style={{width: "300px"}} >
+        <Card className="record" style={{ width: "300px" }} >
             <ul >
                 <div className="item" >
-                <li key={props.key} style={{listStyle:"none"}}>  
-                <CardContent >
-                    <CardMedia image='src\assets\pot.jpg'/>
-                    <Typography variant="h5" noWrap>
-                        {props.title}
-                    </Typography>
-                    <Typography>
-                        LKR {props.price}
-                    </Typography>
-                    <Typography>
-                        {props.stock}
-                    </Typography>
-                </CardContent>
-                
-                </li>
+                    <li  style={{ listStyle: "none" }}>
+                        <CardContent >
+                            <CardMedia image='src\assets\pot.jpg' />
+                            <Typography variant="h5" noWrap>
+                                {props.title}
+                            </Typography>
+                            <Typography>
+                                LKR {props.price}
+                            </Typography>
+                            <Typography>
+                                {props.stock}
+                            </Typography>
+                        </CardContent>
+
+                    </li>
                 </div>
             </ul>
-            </Card>
-       
+        </Card>
+
     )
 }
 

@@ -66,14 +66,15 @@ const Header = (props)=>{
         <AppBar position="sticky">
         <Toolbar className="Header"  style={{backgroundColor: COLOURS.darkBlue }}>
             <Typography className="Logo" variant="h5" noWrap>ShamysCraft.com</Typography>
-            <div className="Search" variant="contained">
+            <div className="Search" variant="contained" style={{padding:'15px'}}>
                 <InputBase 
                     className="inputSearch"
                     style={{color : COLOURS.darkBlue}}
                     placeholder="Search.."
                     
+                    
                 />
-                <Button disableRipple  ><SearchIcon style={{color : COLOURS.darkBlue}}/></Button>
+                <Button disableRipple style={{margin:'-10px', justifyContent:'end'}} ><SearchIcon style={{color : COLOURS.darkBlue, }}/></Button>
             </div>
             
             <Tabs
