@@ -7,6 +7,7 @@ import {
     Typography,
     Grid
 } from "@material-ui/core"
+import {Link} from "react-router-dom"
 import {makeStyles} from "@material-ui/core/styles"
 import {COLOURS} from "../../theme/colors"
 const useStyle = makeStyles(()=>({
@@ -30,7 +31,7 @@ const useStyle = makeStyles(()=>({
     },
     btn:{
         backgroundColor : COLOURS.btnColor,
-        
+        textAlign: 'center'
     }
 }));
 const CartPage = (props)=>{
@@ -58,7 +59,7 @@ const CartPage = (props)=>{
                </CardContent>
                <CardContent className={classes.row3}>
                    <Typography>Total Price</Typography>
-                   <Button className={classes.btn}>Check Out</Button>
+                   <Button className={classes.btn} component={Link} to ='/checkOut' >Check Out</Button>
                </CardContent>
             </Card> 
             </div> 

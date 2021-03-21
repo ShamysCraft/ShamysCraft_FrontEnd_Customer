@@ -17,7 +17,8 @@ import ProfilePage from "./containers_webPages/User_Seller/ProfilePage"
 import HelpPage from "./containers_webPages/User_Seller/HelpPage"
 import CartPage from "./containers_webPages/User_Seller/CartPage"
 import CheckoutPage from "./containers_webPages/User_Seller/CheckoutPage"
-import OrderHistoryPage from "./containers_webPages/User_Seller/OrderHistory"
+import OrderHistory from './containers_webPages/User_Seller/OrderHistory';
+
 //seller
 import BecomeSellerPage from "./containers_webPages/seller/BecomeSellerPage"
 import CreateShopPage from "./containers_webPages/seller/CreateShopPage"
@@ -56,6 +57,9 @@ function App() {
             <Route path="/becomeSeller">
               <BecomeSellerPage/>
             </Route>
+            <Route path="/createShop">
+              <CreateShopPage/>
+            </Route>
             <Route path="/addItem">
               <AddItemPage/>
             </Route>
@@ -85,6 +89,12 @@ function App() {
             </Route>
             <Route path="/pendingOrder">
               <PendingOrderPage/>
+            </Route>
+            <Route path="/orderHistory">
+              <OrderHistory/>
+            </Route>
+            <Route path="/checkOut">
+              <CheckoutPage/>
             </Route>
           </Switch>
           </Body>
