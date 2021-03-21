@@ -11,10 +11,7 @@ export const RightNavBarData = [
         title :"Add item",
         link : "/addItem"
     },
-    {
-        title :"Settings",
-        link : "/settings"
-    },
+    
     {
         title :"Pending Orders",
         link : "/pendingOrder"

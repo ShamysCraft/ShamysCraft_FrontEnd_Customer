@@ -90,6 +90,9 @@ function App() {
             <Route path="/pendingOrder">
               <PendingOrderPage/>
             </Route>
+            <Route path="/confirmOrder">
+              <ConfirmOrderPage/>
+            </Route>
             <Route path="/orderHistory">
               <OrderHistory/>
             </Route>
