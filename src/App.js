@@ -39,75 +39,81 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App" style={{backgroundColor: COLOURS.darkWhite}}>
-      <Header />
-      <div></div>
-        <div className="container">
-        </div>
-        <div className="BodyContainer">
-           <div className="sideNavBar">
-               <SideNavBar/>
-            </div> 
-            
-           <div className="content">
-             <Body>
-           <Switch>
-            <Route exact path="/">
-              <HomePage/>
-            </Route>
-            <Route path="/becomeSeller">
-              <BecomeSellerPage/>
-            </Route>
-            <Route path="/createShop">
-              <CreateShopPage/>
-            </Route>
-            <Route path="/addItem">
-              <AddItemPage/>
-            </Route>
-            <Route exact path="/cart">
-              <CartPage/>
-            </Route>
-            <Route path="/profile">
-              <ProfilePage/>
-            </Route>
-            <Route path="/help">
-              <HelpPage/>
-            </Route>S
-            <Route path="/signup">
-              <SignUp/>
-            </Route>
-            <Route path="/signin">
-              <LoginPage/>
-            </Route>
-            <Route path="/shopSales">
-              <SalesPage/>
-            </Route>
-            <Route path="/shop">
-              <ShopPage/>
-            </Route>
-            <Route path="/itemPage">
-              <ViewItemPage/>
-            </Route>
-            <Route path="/pendingOrder">
-              <PendingOrderPage/>
-            </Route>
-            <Route path="/confirmOrder">
-              <ConfirmOrderPage/>
-            </Route>
-            <Route path="/orderHistory">
-              <OrderHistory/>
-            </Route>
-            <Route path="/checkOut">
-              <CheckoutPage/>
-            </Route>
-          </Switch>
-          </Body>
-            </div> 
 
-           <div className="rightNavBar">
-               <RightNav/>
-            </div> 
+      <div className="container">
+      
+        <div className="Header">
+            <Header />
         </div>
-      <Footer/>
+
+        <div className="BodyContainer">
+          {/* left side navbar */}
+           <div className="sideNavBar"><SideNavBar/></div> 
+
+           {/* body content */}
+           <div className="content">
+              <Body>
+                <Switch>
+                  <Route exact path="/">
+                    <HomePage/>
+                  </Route>
+                  <Route path="/becomeSeller">
+                    <BecomeSellerPage/>
+                  </Route>
+                  <Route path="/createShop">
+                    <CreateShopPage/>
+                  </Route>
+                  <Route path="/addItem">
+                    <AddItemPage/>
+                  </Route>
+                  <Route exact path="/cart">
+                    <CartPage/>
+                  </Route>
+                  <Route path="/profile">
+                    <ProfilePage/>
+                  </Route>
+                  <Route path="/help">
+                    <HelpPage/>
+                  </Route>S
+                  <Route path="/signup">
+                    <SignUp/>
+                  </Route>
+                  <Route path="/signin">
+                    <LoginPage/>
+                  </Route>
+                  <Route path="/shopSales">
+                    <SalesPage/>
+                  </Route>
+                  <Route path="/shop">
+                    <ShopPage/>
+                  </Route>
+                  <Route path="/itemPage">
+                    <ViewItemPage/>
+                  </Route>
+                  <Route path="/pendingOrder">
+                    <PendingOrderPage/>
+                  </Route>
+                  <Route path="/confirmOrder">
+                    <ConfirmOrderPage/>
+                  </Route>
+                  <Route path="/orderHistory">
+                    <OrderHistory/>
+                  </Route>
+                  <Route path="/checkOut">
+                    <CheckoutPage/>
+                  </Route>
+              </Switch>
+              </Body>
+           </div> 
+
+            {/* right side navbar */}
+           <div className="rightNavBar"><RightNav/></div> 
+        </div>
+
+        <div className="Footer">
+          <Footer/>
+        </div>
+        </div>
     </div>
     </ThemeProvider>
   );

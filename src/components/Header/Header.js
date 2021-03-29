@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {Link} from "react-router-dom"
 import {COLOURS} from "../../theme/colors"
-
+import {makeStyles} from "@material-ui/core/styles"
 
 //import material ui design 
 import SearchIcon from '@material-ui/icons/Search';
@@ -29,9 +29,23 @@ import {
     
 } from '@material-ui/core'
 
-
+const useStyles = makeStyles((theme)=>({
+    Search:{
+        margin: '10px',
+        marginLeft: 'auto',
+        /* padding: 15px; */
+        backgroundColor: 'white',
+        opacity: '0.4',
+        display: 'flex',
+        justifyContent: 'center',
+        borderRadius: '5px',
+        height: '20px',
+        width: '300px'
+    }
+}));
 
 const Header = (props)=>{
+    const classes = useStyles();
     const [value, setValue] = useState(0);
     const handleClickTab =(e, newValue) => {
         setValue(newValue)
@@ -63,10 +77,10 @@ const Header = (props)=>{
     //     setValue(value);
     // }
     return(
-        <AppBar position="sticky">
+        <AppBar >
         <Toolbar className="Header"  style={{backgroundColor: COLOURS.darkBlue }}>
             <Typography className="Logo" variant="h5" noWrap>ShamysCraft.com</Typography>
-            <div className="Search" variant="contained" style={{padding:'15px'}}>
+            <div className={classes.Search} variant="contained" style={{padding:'15px'}}>
                 <InputBase 
                     className="inputSearch"
                     style={{color : COLOURS.darkBlue}}

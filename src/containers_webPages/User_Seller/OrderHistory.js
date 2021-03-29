@@ -52,6 +52,7 @@ const OrderHistory = (props)=>{
             <div >
             <Card className={classes.row}>
                 <CardContent className={classes.row1}>
+                    {/* image */}
                    <Typography>Product Name</Typography>
                    <Typography>Product Price</Typography>
                </CardContent>
@@ -59,12 +60,12 @@ const OrderHistory = (props)=>{
                    <Typography>Quantity</Typography>
                    <Typography>Price * Qty</Typography>
                    <Typography>Delivery Method</Typography>
-                   <Typography>Availability</Typography>
                </CardContent>
                <CardContent className={classes.row3}>
+                   <Typography>Status</Typography>
                    <Typography>Total Price</Typography>
-                   <Button className={classes.btn}>Check Out</Button>
-               </CardContent>
+                   <Typography>240</Typography>
+                 </CardContent>
             </Card>
             </div>
             

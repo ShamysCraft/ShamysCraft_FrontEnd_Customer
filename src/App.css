@@ -1,75 +1,54 @@
 
-/* .App{
-  width: 100vh;
-  height: 100vh;
-} */
 
-body{
-  margin: 0;
-  padding: 0;
- 
- }
-/* 
-.Header{
-  position: fixed;
-} */
-
-.Body{
-  
-  width: 1000px ;
-  height: 100%;
-  
-}
-
-div.Search{
-  margin: 10px;
-  margin-left: auto;
-  /* padding: 15px; */
-  background-color: white;
-  opacity: 0.4;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-  height: 20px;
-  width: 300px;
-}
-
-.BodyContainer{
-  height: 100vh;
+/* body container */
+.container{
   width: 100%;
+  height: 100vh;
+  
+}
+/* NavBar */
+.Header{
+  /* position: static; */
+  height: 10%;
+  width: 100%;
+}
+/* Body of the page */
+.BodyContainer{
+  height: 80%;
+  width: 100%;
+  /* margin: 15px; */
   /* background-color: pink; */
   display: flex;
-  
-  
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-
-
+/* Footer  */
+.Footer{
+  height: 10%;
+  background-color: lightgrey;
+}
 
 .sideNavBar{
   background-color: #F4F3F3;
-  width: 20%;
+  width: 15%;
+}
+.content{
+  width: 73%;
   
   
 }
-
-.content
-{
-  width: 80%;
- /* background-color: lightseagreen; */
-}
-
 .rightNavBar{
-  width: 20%;
+  width: 12%;
   background-color: #F4F3F3;
   justify-self: end;
 }
 
-.sidebar{
+/* .sidebar{
   position: fixed;
   height: 60%;
   width: 200px ;
   background-color: #F4F3F3;
-  margin: 50px 0 25px 0;
+ 
   border-radius: 5px;
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -77,12 +56,10 @@ div.Search{
   0 12.5px 10px rgba(0, 0, 0, 0.06),
   0 22.3px 17.9px rgba(0, 0, 0, 0.072),
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
-  
-  
-}
+  0 100px 80px rgba(0, 0, 0, 0.12) 
+} */
 
-.sidebarList{
+/* .sidebarList{
   height: auto;
   padding: 0;
   width: 100%;
@@ -97,25 +74,23 @@ div.Search{
   margin: 0;
   display: flex;
   flex-direction: column;
-/* justify-content: center; */
+
 align-items: center;
 }
+
 .sidebarList .row:hover{
   cursor: pointer;
   font-size: 20px;
   background-color: gray ;
 }
+
 .row #title{
   flex: 70%;
   display: grid;
   place-items: center;
   padding: 20px;
   
-}
-
-#rightNav{
-  margin-left: 60px;
-}
+} */
 
 /* Item */
 .record{

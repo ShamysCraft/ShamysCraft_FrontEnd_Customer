@@ -37,7 +37,11 @@ const useStyle = makeStyles(()=>({
     fields:{
         backgroundColor: COLOURS.darkWhite,
         width: '200px',
-        textAlign: 'center'
+        textAlign: 'center',
+        height: '30px'
+    },
+    input:{
+        padding: '0 2px 0 5px'
     }
 }))
 
@@ -61,38 +65,38 @@ const ProfilePage = (props)=>{
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>Old Password</FormLabel>
-                        <TextField className={classes.fields} type="password"/>
+                        <TextField className={`${classes.fields} ${classes.input}`} type="password"/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>New Password</FormLabel>
-                        <TextField className={classes.fields} type="password"/>
+                        <TextField className={`${classes.fields} ${classes.input}`} type="password"/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>Confirm Password</FormLabel>
-                        <TextField className={classes.fields} type="password"/>
+                        <TextField className={`${classes.fields} ${classes.input}`} type="password"/>
                     </div>
                     <Button variant="contained" color="primary" fullWidth className={classes.Button}>Update Password</Button>
                 </CardContent>
                 <CardContent>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>Line 1</FormLabel>
-                        <TextField className={classes.fields}/>
+                        <TextField className={`${classes.fields} ${classes.input}`}/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>City</FormLabel>
-                        <TextField className={classes.fields}/>
+                        <TextField className={`${classes.fields} ${classes.input}`}/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>District</FormLabel>
-                        <TextField className={classes.fields}/>
+                        <TextField className={`${classes.fields} ${classes.input}`}/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>Province</FormLabel>
-                        <TextField className={classes.fields}/>
+                        <TextField className={`${classes.fields} ${classes.input}`}/>
                     </div>
                     <div className={classes.row}>
                         <FormLabel className={classes.formLabel}>Postal Code</FormLabel>
-                        <TextField className={classes.fields}/>
+                        <TextField className={`${classes.fields} ${classes.input}`}/>
                     </div>
                     <Button variant="contained" color="primary" fullWidth className={classes.Button}>Add/Update Address</Button>
                 

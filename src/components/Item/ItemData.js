@@ -26,4 +26,53 @@ export const ItemData = [
         title : "Clay Pot",
         price : "900.00"
     },
+    
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
+    {
+        title : "Clay Pot",
+        price : "900.00"
+    },
 ]

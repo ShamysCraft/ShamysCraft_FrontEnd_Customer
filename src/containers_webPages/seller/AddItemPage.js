@@ -46,8 +46,14 @@ const useStyles = makeStyles((theme)=>({
     },
     form: {
         width: '100%', // Fix IE 11 issue.
-        marginTop: theme.spacing(5),
-      }
+        
+      },
+
+    card:{
+        padding:'20px',
+        margin: '20px',
+        width: '50vh'
+    }
 }));
 
 const AddItemPage = (props)=>{
@@ -63,10 +69,12 @@ const AddItemPage = (props)=>{
 
     return(
         <div>
-            <Container component="main" maxWidth="xs">
+            <Container  component="main" maxWidth="xs">
+                <Card className={classes.card}>
             <CssBaseline/>
+            <Typography variant="h4">Add Item</Typography>
             <form className={classes.form} noValidate>
-                <Typography variant="h3">Add Item</Typography>
+                
                 {/* <FormLabel>Name</FormLabel> */}
                 <TextField
                     variant="standard"
@@ -101,12 +109,9 @@ const AddItemPage = (props)=>{
                     margin="normal"
                     required
                     id="Price"
-                    value="LKR"
                     label="Price Per Item"
                     name="Price"
-                    autoComplete="Price"
-                    autoFocus
-                    type="number"
+                    
                     InputProps={{inputProps:{min:0}}}
                     onChange={event => setText(event.target.value)}
                     
@@ -116,7 +121,7 @@ const AddItemPage = (props)=>{
                     margin="normal"
                     required
                     multiline
-                    rows={2}
+                    rows={1}
                     id="Description"
                     label="Description"
                     name="Description"
@@ -143,7 +148,7 @@ const AddItemPage = (props)=>{
                 
                 <div className={classes.qtybtn}>
                 <FormLabel>Quantity : </FormLabel>
-                <ButtonGroup disableRipple variant="contained"   >
+                <ButtonGroup disableRipple variant="contained">
                         <Button color="primary" onClick={()=> count<1 ? "" : setCount(count-1)} >-</Button>
                         <Button>{count}</Button>
                         <Button color="primary"onClick={()=>count>9 ? "" : setCount(count+1)}>+</Button>
@@ -156,6 +161,7 @@ const AddItemPage = (props)=>{
                     </ButtonGroup>
                 </div>
             </form>
+            </Card>
             </Container>
         </div>
     )
