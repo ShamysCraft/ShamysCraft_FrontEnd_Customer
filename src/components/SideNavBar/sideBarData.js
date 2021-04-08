@@ -6,7 +6,7 @@ export const sideBarData = [
         link: "/",
     },
     {
-        title: "Jwellery",
+        title: "Jwellery ",
         link: "/becomeSeller"
     },
     {
@@ -14,15 +14,15 @@ export const sideBarData = [
         link: "/"
     },
     {
-        title: "Wood Work",
+        title: "Wood Work ",
         link: "/"
     },
     {
-        title: "Paper Craft",
+        title: "Paper Craft ",
         link: "/"
     },
     {
-        title: "Stationary",
+        title: "Stationary ",
         link: "/"
     },
 ];

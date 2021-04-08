@@ -4,7 +4,14 @@ import React from "react"
 import {sideBarData} from "./sideBarData"
 import {Link} from 'react-router-dom'
 import {makeStyles} from "@material-ui/core/styles"
+import {COLOURS} from "../../theme/colors"
 const useStyles = makeStyles((theme)=>({
+    category:{
+        textAlign:"center",
+        padding: '20px',
+        backgroundColor: '#d8e2dc',
+        boxShadow: '0 0 10px #d8e2dc '
+    },
     sidebar:{
         position: 'fixed',
         height: '80%',
@@ -28,12 +35,9 @@ const useStyles = makeStyles((theme)=>({
         display: 'flex',
         flexDirection: 'column',
          alignItems: 'center',
+        outline: '0 !important',
 
-        "&:hover":{
-            cursor: 'pointer',
-            fontSize: '20px',
-            backgroundColor: 'gray'
-        }
+
     },
 
     title:{
@@ -41,6 +45,33 @@ const useStyles = makeStyles((theme)=>({
         display: 'grid',
         placeItems: 'center',
         padding: '20px',
+        textDecoration:'none',
+        color: 'black',
+        outline: 0,
+
+        
+        "&:active":{
+            color: 'black',
+                       
+        },
+        "&:focus":{
+            color: 'black',
+            
+
+            
+        },
+        "&:hover":{
+            textDecoration: ` 2px underline ${COLOURS.darkBlue}` ,
+            width: '100px',
+            // backgroundColor: '#d8e2dc',
+            // boxShadow: '0px 0px 10px 8px #d8e2dc'
+        }
+        ,
+        "&:visited":{
+            color: 'black',
+            textDecoration: 'none'
+
+        }
     }
 
 }));
@@ -48,7 +79,7 @@ const SideNavBar = ()=>{
     const classes = useStyles();
     return(
        <div className={classes.sidebar}>
-           <Typography variant="h2" style={{textAlign:"center"}}>Category</Typography>
+           <Typography variant="h4" style={{}} className={classes.category}>Category</Typography>
            <ul className = "sidebarList">
            {sideBarData.map((val,key)=>{
            return (
