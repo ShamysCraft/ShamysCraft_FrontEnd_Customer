@@ -1,26 +1,28 @@
-
-
-/* body container */
-.container{
+.App{
   width: 100%;
   height: 100vh;
-  
+  /* overflow:auto */
 }
+
 /* NavBar */
-.Header{
-  /* position: static; */
+.header{
   height: 10%;
   width: 100%;
 }
 /* Body of the page */
 .BodyContainer{
-  height: 80%;
+  height: 90%;
   width: 100%;
-  /* margin: 15px; */
-  /* background-color: pink; */
   display: flex;
+  flex-direction: row;
+}
+
+.body{
+  height: 90%;
+  /* margin: 10px; */
   overflow-y: scroll;
   overflow-x: hidden;
+  
 }
 /* Footer  */
 .Footer{
@@ -31,17 +33,21 @@
 .sideNavBar{
   background-color: #F4F3F3;
   width: 15%;
+  
+
 }
 .content{
-  width: 73%;
-  
+  width: 85%;
+  /* padding: auto; */
+  position: relative;
   
 }
-.rightNavBar{
+
+/* .rightNavBar{
   width: 12%;
   background-color: #F4F3F3;
   justify-self: end;
-}
+} */
 
 /* .sidebar{
   position: fixed;
