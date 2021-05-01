@@ -4,20 +4,15 @@ import {
     Button,
     CssBaseline,
     TextField,
-    FormControlLabel,
-    Checkbox,
     Grid,
-    Box,
     Container,
     Typography,
-    RootRef,
 } from '@material-ui/core'
 import Avatar from "@material-ui/core/Avatar"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import {makeStyles} from "@material-ui/core/styles"
 import {COLOURS} from "../theme/colors"
 
-import formik from "formik"
 const useStyle = makeStyles((theme)=>({
     paper: {
         display: 'flex',
@@ -52,7 +47,7 @@ function SignIn() {
                     <Typography component="h1" variant="h5">
                         Sign In
                     </Typography>
-                    <form className={root.form} noValidate>
+                    <form className={root.form} >
                         <div  style={{display:'flex'}}>
                       
                         </div>
@@ -86,7 +81,7 @@ function SignIn() {
                             variant="contained"
                             style={{backgroundColor :COLOURS.btnColor}}
                             className={root.submit}
-                        >Sign Up</Button>
+                        >Sign In</Button>
                         <Grid item>
                            <Link to ='/signup' >
                                 {"Don't have an Account? Sign Up"}

@@ -4,20 +4,14 @@ import {
     Button,
     CssBaseline,
     TextField,
-    FormControlLabel,
-    Checkbox,
     Grid,
-    Box,
     Container,
     Typography,
-    RootRef,
 } from '@material-ui/core'
 import Avatar from "@material-ui/core/Avatar"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined"
 import {makeStyles} from "@material-ui/core/styles"
 import {COLOURS} from "../theme/colors"
-
-import formik from "formik"
 
 const useStyle = makeStyles((theme)=>({
     paper: {
@@ -53,8 +47,8 @@ const SignUpPage = (props)=>{
                     <Typography component="h1" variant="h5">
                         Sign Up
                     </Typography>
-                    <form className={root.form} noValidate>
-                        <div  style={{display:'flex'}}>
+                    <form className={root.form} >
+                        
                         <TextField 
                             variant="outlined"
                             margin="normal"
@@ -65,19 +59,21 @@ const SignUpPage = (props)=>{
                             name="FirstName"
                             autoComplete="FirstName"
                             autoFocus
+                            fullWidth
+
                         />
                         <TextField
                             variant="outlined"
                             margin="normal"
                             required
-                            
+                            fullWidth
                             id="LastName"
                             label="Last Name"
                             name="LastName"
                             autoComplete="LastName"
                             autoFocus
                         />
-                        </div>
+                        
                         <TextField
                             variant="outlined"
                             margin="normal"

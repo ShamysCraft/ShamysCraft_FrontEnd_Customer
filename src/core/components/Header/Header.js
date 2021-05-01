@@ -91,8 +91,7 @@ const Header = (props) => {
                     indicatorColor="primary"
                     value={value}
                 >
-                    <Tab disableRipple component={Link} to='/' label="Home" icon={<HomeIcon />} > </Tab>
-                    <Tab disableRipple component={Link} to='/becomeSeller' label="Become a Seller" > </Tab>
+                    <Tab disableRipple component={Link} to='/user/dashboard' label="Home" icon={<HomeIcon />} > </Tab>
                     <Tab disableRipple icon={<ProfileIcon className="icons" />} label="Profile" onClick={handleClick}> </Tab>
                     <Tab disableRipple component={Link} to='/help' icon={<HelpIcon className="icons" />} label="Help"> </Tab>
                     <Tab disableRipple component={Link} to='/cart' icon={<CartIcon className="icons" />} label="Cart"> </Tab>
@@ -109,6 +108,7 @@ const Header = (props) => {
                         <MenuItem onClick={handleClose1} component={Link} to='/profile'>Profile</MenuItem>
                         <MenuItem onClick={handleClose1} component={Link} to='/orderHistory'>My Orders</MenuItem>
                         <MenuItem onClick={handleClose1} component={Link} to='/signin'>Sign In</MenuItem>
+                        <MenuItem onClick={handleClose1} component={Link} to='/signout'>Sign Out</MenuItem>
                     </Menu>
                 </div>
                 {/* <Button disableRipple endIcon = {<ProfileIcon className="icons"/>} component={Link} to ='/account' variant="contained" color="primary">Go to Account </Button> */}

@@ -1,13 +1,10 @@
 import './App.css';
 import Routes from "./Routes"
 
-
-
 //import all the common components
 import Header from "./core/components/Header/Header"
 import Footer from "./core/components/Footer/Footer"
 import SideNavBar from "./core/components/SideNavBar/SideNavBar"
-import { Route } from 'react-router';
 
 function App() {
   return (
@@ -17,12 +14,9 @@ function App() {
       <div className="BodyContainer">
         {/* left side navbar */}
         <div className="sideNavBar"><SideNavBar /></div>
-
         {/* body content */}
         <div className="content">
-          <div className="body">
-            <Routes />
-          </div>
+          <div className="body"><Routes /></div>
           <div className="Footer"></div>
         </div>
       </div>
