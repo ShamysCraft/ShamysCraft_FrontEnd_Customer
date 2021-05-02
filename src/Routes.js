@@ -17,7 +17,7 @@ function Routes() {
     return (
         <div>
              <Switch>
-                <Route exact path="/user/dashboard" component={HomePage}/>
+                <Route exact path="/" component={HomePage}/>
                 
                 <Route  path="/cart" component={CartPage}/>
                  

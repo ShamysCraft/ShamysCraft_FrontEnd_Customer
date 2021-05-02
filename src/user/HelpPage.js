@@ -1,7 +1,5 @@
 import React, {useState} from "react";
-import {api} from '../backend'
 const HelpPage = (props)=>{
-    console.log(api)
     return(
         <div className="Help">
             <h1>
