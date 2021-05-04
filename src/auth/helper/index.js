@@ -15,7 +15,7 @@ export const signup = (user) => {
         })
 };
 
-export const signin = (user) => {
+export const signin = user => {
     return fetch(`${API}/signin`, {
         method: "POST",
         headers: {
@@ -23,26 +23,29 @@ export const signin = (user) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(user)
-    }).then(response => {
-        return response.json();
-      })
-      .catch(err => console.log(err));
-}
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
 
 //browser does not rememebr json res
 //set token in user browser
 export const authenticate = (data, next) => {
     if (typeof window !== "undefined") {
-        localStorage.setItem("jwt", JSON.stringify(data))
+        localStorage.setItem("jwt", JSON.stringify(data));
         next();
     }
-}
+};
 
-//if we have access to window object
-//remove jwt
-
+// next allows to give a callback after the execution of the method
 export const signout = next => {
+    //if we have access to window object
+
     if (typeof window !== "undefined") {
+
         localStorage.removeItem("jwt")
         next();
         return fetch(`${API}/signout`, {
@@ -59,9 +62,8 @@ export const isAuthenticated = () => {
         return false;
     }
     if (localStorage.getItem("jwt")) {
-        return JSON.parse(localStorage.getItem("jwt"))
-    }
-    else {
+        return JSON.parse(localStorage.getItem("jwt"));
+    } else {
         return false;
     }
 }

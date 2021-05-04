@@ -89,15 +89,17 @@ function SignIn() {
     const performRedirect = () => {
         // todo
         if (didRedirect) {
-            if (user && user.role === 45) {
-                return <p>redirect to admin</p>;
-            } else {
-                return <Typography>redirect to user dashboard</Typography>;
-            }
+            if (user && user.role === 0) {
+                return <Redirect to='/'/>
+            } 
         }
-        if (isAuthenticated()) {
-            return <Redirect to="/profile" />;
+        if (isAuthenticated() && user.role === 0) {
+            return <Redirect to="/" />;
         }
+        if (isAuthenticated() && user.role === 45) {
+            return <Redirect to="/" />;
+        }
+        
     };
 
     const loadingMessage = () => {

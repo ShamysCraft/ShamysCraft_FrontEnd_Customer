@@ -13,15 +13,27 @@ import HelpPage from "./user/HelpPage"
 import CartPage from "./user/CartPage"
 import CheckoutPage from "./user/CheckoutPage"
 import OrderHistory from './user/OrderHistory';
+import UserDashboard from './user/UserDashBoard';
+import Errorpage from './user/ErrorPage';
+
+// import private routes
+import PrivateRoute from "./auth/helper/PrivateRoutes"
+//import admin routes
+import AdminRoute from "./auth/helper/AdminRoutes"
+
+
 function Routes() {
     return (
         <div>
              <Switch>
                 <Route exact path="/" component={HomePage}/>
+                <Route exact path="/error" component={Errorpage}/>
+
+                <PrivateRoute exact path="/user/dashboard" component={UserDashboard}/>
                 
-                <Route  path="/cart" component={CartPage}/>
+                <PrivateRoute  path="/cart" component={CartPage}/>
                  
-                <Route path="/profile" component={ProfilePage}/>
+                <PrivateRoute path="/profile" component={ProfilePage}/>
                 
                 <Route path="/help" component={HelpPage}/>
                 
@@ -29,9 +41,13 @@ function Routes() {
                 
                 <Route path="/signin" component={LoginPage}/>
                 
-                <Route path="/orderHistory" component={OrderHistory}/>
+                <PrivateRoute path="/orderHistory" component={OrderHistory}/>
                 
-                <Route path="/checkOut" component={CheckoutPage}/>
+                <PrivateRoute path="/checkOut" component={CheckoutPage}/>
+
+                {/* <AdminRoute path="/profile" component={ProfilePage}/>
+                <AdminRoute  path="/cart" component={CartPage}/> */}
+
                 
               </Switch>
            

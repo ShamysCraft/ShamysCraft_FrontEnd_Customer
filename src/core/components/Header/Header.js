@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import {COLOURS} from "../../../theme/colors"
+import React, { useState ,Fragment} from "react"
+import { Link, useHistory } from "react-router-dom"
+import { COLOURS } from "../../../theme/colors"
 import { makeStyles } from "@material-ui/core/styles"
 
 //import material ui design 
@@ -23,6 +23,7 @@ import {
     Menu
 
 } from '@material-ui/core'
+import { signout, isAuthenticated } from "../../../auth/helper"
 
 const useStyles = makeStyles((theme) => ({
     Search: {
@@ -36,11 +37,15 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '5px',
         height: '10px',
         width: '300px'
+    },
+    signup:{
+        color:'green',
     }
 }));
 
 const Header = (props) => {
     const classes = useStyles();
+    const history = useHistory();
     const [value, setValue] = useState(0);
     const handleClickTab = (e, newValue) => {
         setValue(newValue)
@@ -91,7 +96,7 @@ const Header = (props) => {
                     indicatorColor="primary"
                     value={value}
                 >
-                    <Tab disableRipple component={Link} to='/user/dashboard' label="Home" icon={<HomeIcon />} > </Tab>
+                    <Tab disableRipple component={Link} to='/' label="Home" icon={<HomeIcon />} > </Tab>
                     <Tab disableRipple icon={<ProfileIcon className="icons" />} label="Profile" onClick={handleClick}> </Tab>
                     <Tab disableRipple component={Link} to='/help' icon={<HelpIcon className="icons" />} label="Help"> </Tab>
                     <Tab disableRipple component={Link} to='/cart' icon={<CartIcon className="icons" />} label="Cart"> </Tab>
@@ -107,8 +112,29 @@ const Header = (props) => {
                     >
                         <MenuItem onClick={handleClose1} component={Link} to='/profile'>Profile</MenuItem>
                         <MenuItem onClick={handleClose1} component={Link} to='/orderHistory'>My Orders</MenuItem>
-                        <MenuItem onClick={handleClose1} component={Link} to='/signin'>Sign In</MenuItem>
-                        <MenuItem onClick={handleClose1} component={Link} to='/signout'>Sign Out</MenuItem>
+                        {/* if not authenticated */}
+                        {!isAuthenticated()&& (
+                            <Fragment>
+                            <MenuItem  onClick={handleClose1} component={Link} to='/signin'><Typography color="primary">Sign In</Typography></MenuItem>
+                            <MenuItem onClick={handleClose1} component={Link} to='/signup'><Typography className={classes.signup}>Sign Up</Typography></MenuItem>
+                            </Fragment>    
+                        )}
+                        {/* if authenticated */}
+                        {isAuthenticated() && (
+                            <MenuItem onClick={handleClose1}>
+                                <Typography
+                                    color="secondary"
+                                    onClick={()=>{
+                                        signout(()=>{
+                                            history.push("/user/dashboard")
+                                        })
+                                    }}
+                                >
+                                    Sign Out
+                                </Typography>
+                            </MenuItem>
+                        )}
+
                     </Menu>
                 </div>
                 {/* <Button disableRipple endIcon = {<ProfileIcon className="icons"/>} component={Link} to ='/account' variant="contained" color="primary">Go to Account </Button> */}
