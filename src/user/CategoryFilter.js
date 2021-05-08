@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { getProducts } from "./helper/coreapicalls"
+
 import Item from "../core/components/Item/Item"
 import { Grid, Typography } from "@material-ui/core"
+import { getProducts } from "../core/helper/coreapicalls";
 
-const HomePage = () => {
+const CategoryFilter = ({match}) => {
   // empty error
   const [products, setProducts] = useState([])
   const [error, setError] = useState("")
   const [reload, setReload] = useState(false)
-
+  const [CategoryId, setCategoryId] = useState("")
+  
   // getProducts
   const loadAllProducts = () => {
     getProducts()
@@ -17,28 +19,35 @@ const HomePage = () => {
           setError(data.error)
         }
         else {
-
+          
           setProducts(data)
           console.log(data)
-
+          
         }
       })
   }
 
-
-
-
+  const LoadCatId = (categoryId) =>{
+      console.log(categoryId)
+        setCategoryId(categoryId)
+        
+  }
+// reload every time when category id change
+  useEffect(() => {
+    LoadCatId(match.params.categoryId);
+  }, [match.params.categoryId, reload])
+ 
 
   useEffect(() => {
-    loadAllProducts()
+    loadAllProducts();
+    
   }, [reload])
 
   return (
 
     <React.Fragment>
-      <Typography align="center" style={{ padding: '10px', height: '80px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Welcome to ShamysCraft</Typography>
       <Grid >
-
+      
         <Grid
           container
           direction="row"
@@ -46,17 +55,17 @@ const HomePage = () => {
           alignItems="center"
         >
           {products && products.map((product, index) => {
-
+            if(product.category._id === CategoryId){
             return (
-
+              
               <div key={index}>
                 <Item product={product}
-                  setReload={setReload}
-                  reload={reload}
+                setReload={setReload}
+                reload={reload}
                 />
-
+                
               </div>
-            )
+            )}
           })}
 
 
@@ -67,4 +76,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default CategoryFilter;

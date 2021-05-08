@@ -20,7 +20,6 @@ import {
 const ViewItemPage = (props) => {
     const [count, setCount] = useState(0)
     const price = props.price;
-    const formik = useFormik({})
 
     return (
         <div>
@@ -32,7 +31,7 @@ const ViewItemPage = (props) => {
                     <Typography variant="h5">Price {props.price}</Typography>
                     <Typography variant="h6">Handmade clay pots for cooking, gas burner allowed</Typography>
                     <Typography variant="h6">Category : Pottery</Typography>
-                    <Typography variant="h6">Dimention : 5*2*5</Typography>
+                    <Typography noWrap variant="h6">Description</Typography>
                 </CardContent>
                 <CardContent>
 

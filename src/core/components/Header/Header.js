@@ -126,7 +126,7 @@ const Header = (props) => {
                                     color="secondary"
                                     onClick={()=>{
                                         signout(()=>{
-                                            history.push("/user/dashboard")
+                                            history.push("/")
                                         })
                                     }}
                                 >

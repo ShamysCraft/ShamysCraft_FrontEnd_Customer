@@ -1,70 +1,63 @@
-import React, {useState} from "react";
-import {
-    Card,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography,
-    Grid
-} from "@material-ui/core"
-import {Link} from "react-router-dom"
-import {makeStyles} from "@material-ui/core/styles"
-import {COLOURS} from "../theme/colors"
-const useStyle = makeStyles(()=>({
-    block :{
-        marginTop: '20px'
-    },
-    row:{
-        display:'flex',
-        width: '600px',
-        margin: '5px',
-        
-    },
-    row1:{
-        width:'250px'
-    },
-    row2:{
-        width:'200px'
-    },
-    row3:{
-        width:'100px'
-    },
-    btn:{
-        backgroundColor : COLOURS.btnColor,
-        textAlign: 'center'
+import React, { useState, useEffect } from "react";
+import Item from "../core/components/Item/Item"
+import { Grid, Typography } from "@material-ui/core"
+import { loadCart } from "../core/helper/cartHelper";
+
+const CartPage = () => {
+
+    const [products, setProducts] = useState([])
+    const [reload, setReload] = useState(false)
+
+    useEffect(() => {
+        setProducts(loadCart())
+    }, [reload])
+
+    const loadAllProducts = () => {
+        return (
+            <div>
+                <h2>this section load prods</h2>
+                {products.map((product, index) => (
+
+                    <Item
+                        key={index}
+                        product={product}
+                        removefromCart={true}
+                        addtoCart={false}
+                        setReload={setReload}
+                        reload={reload}
+                    />
+
+                ))}
+            </div>
+        );
+    };
+
+    const loadCheckout = () => {
+        return (
+            <div>
+                <h2>for checkout</h2>
+            </div>
+        )
     }
-}));
-const CartPage = (props)=>{
-    const classes = useStyle();
-    return(
-        <div>
-          <Grid
-          container 
-          direction="column"
-          justify="center"
-          alignItems="center" 
-          spacing={1}> 
-             <div className={classes.block}>  
-              <Card className={classes.row} >
-               <CardContent className={classes.row1}>
-                   {/* image goes here */}
-                   <Typography>Product Name</Typography>
-                   <Typography>Product Price</Typography>
-               </CardContent>
-               <CardContent className={classes.row2}>
-                   <Typography>Quantity</Typography>
-                   <Typography>Price * Qty</Typography>
-                   <Typography>Delivery Method</Typography>
-                   <Typography>Availability</Typography>
-               </CardContent>
-               <CardContent className={classes.row3}>
-                   <Typography>Total Price</Typography>
-                   <Button className={classes.btn} component={Link} to ='/checkOut' >Check Out</Button>
-               </CardContent>
-            </Card> 
-            </div> 
-           </Grid>
-        </div>
+
+    return (
+
+        <React.Fragment>
+            <Typography align="center" style={{ padding: '10px', height: '60px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Ready to checkout!</Typography>
+
+            <Grid container style={{ flexGrow: 1 }} >
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        {loadAllProducts()}
+                    </Grid>
+                    <Grid item xs={6}>
+                        {/* {loadCheckout()} */}
+                    </Grid>
+
+                </Grid>
+            </Grid>
+        </React.Fragment>
+
     )
 }
 

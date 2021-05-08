@@ -13,7 +13,7 @@ import HelpPage from "./user/HelpPage"
 import CartPage from "./user/CartPage"
 import CheckoutPage from "./user/CheckoutPage"
 import OrderHistory from './user/OrderHistory';
-import UserDashboard from './user/UserDashBoard';
+import CategoryFilter from './user/CategoryFilter';
 import Errorpage from './user/ErrorPage';
 
 // import private routes
@@ -27,11 +27,12 @@ function Routes() {
         <div>
              <Switch>
                 <Route exact path="/" component={HomePage}/>
+                
                 <Route exact path="/error" component={Errorpage}/>
 
-                <PrivateRoute exact path="/user/dashboard" component={UserDashboard}/>
+                <Route exact path="/category/filter/:categoryId" component={CategoryFilter}/>
                 
-                <PrivateRoute  path="/cart" component={CartPage}/>
+                <Route  path="/cart" component={CartPage}/>
                  
                 <PrivateRoute path="/profile" component={ProfilePage}/>
                 
