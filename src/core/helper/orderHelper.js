@@ -9,5 +9,8 @@ export const createOrder = (userId, token, orderInfo) =>{
             Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({order: orderInfo})
-    }).then(response => response.json()).catch(err => console.log(err))
+
+    })
+    .then(response => response.json())
+    .catch(err => console.log(err))
 }

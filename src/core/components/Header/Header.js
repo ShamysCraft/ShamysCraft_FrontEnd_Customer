@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
     },
     signup:{
         color:'green',
+    },
+    tab: {
+        marginLeft: 'auto'
     }
 }));
 
@@ -80,23 +83,15 @@ const Header = (props) => {
         <AppBar >
             <Toolbar className="Header" style={{ backgroundColor: COLOURS.darkBlue }}>
                 <Typography className="Logo" variant="h5" noWrap>ShamysCraft.com</Typography>
-                <div className={classes.Search} variant="contained" style={{ padding: '15px' }}>
-                    <InputBase
-                        className="inputSearch"
-                        style={{ color: COLOURS.darkBlue }}
-                        placeholder="Search.."
-
-
-                    />
-                    <Button disableRipple style={{ margin: '-10px', justifyContent: 'end' }} ><SearchIcon style={{ color: COLOURS.darkBlue, }} /></Button>
-                </div>
+                
 
                 <Tabs
                     onChange={handleClickTab}
                     indicatorColor="primary"
                     value={value}
+                    className={classes.tab}
                 >
-                    <Tab disableRipple component={Link} to='/' label="Home" icon={<HomeIcon />} > </Tab>
+                    <Tab disableRipple style={{ justifyContent: 'end' }} component={Link} to='/' label="Home" icon={<HomeIcon />} > </Tab>
                     <Tab disableRipple icon={<ProfileIcon className="icons" />} label="Profile" onClick={handleClick}> </Tab>
                     <Tab disableRipple component={Link} to='/help' icon={<HelpIcon className="icons" />} label="Help"> </Tab>
                     <Tab disableRipple component={Link} to='/cart' icon={<CartIcon className="icons" />} label="Cart"> </Tab>

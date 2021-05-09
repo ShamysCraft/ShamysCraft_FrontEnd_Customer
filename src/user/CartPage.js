@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../core/components/Item/Item"
 import { Grid, Typography } from "@material-ui/core"
 import { loadCart } from "../core/helper/cartHelper";
+import PaymentB from "./PaymentB";
 
 const CartPage = () => {
 
@@ -12,10 +13,10 @@ const CartPage = () => {
         setProducts(loadCart())
     }, [reload])
 
-    const loadAllProducts = () => {
+    const loadAllProducts = (products) => {
         return (
             <div>
-                <h2>this section load prods</h2>
+                <h2>Load Products</h2>
                 {products.map((product, index) => (
 
                     <Item
@@ -45,13 +46,13 @@ const CartPage = () => {
         <React.Fragment>
             <Typography align="center" style={{ padding: '10px', height: '60px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Ready to checkout!</Typography>
 
-            <Grid container style={{ flexGrow: 1 }} >
+            <Grid container style={{ flexGrow: 1 ,padding:'2%'}}>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
-                        {loadAllProducts()}
+                        {products.length > 0 ? loadAllProducts(products) : <h3>No Items in the cart!</h3>}
                     </Grid>
                     <Grid item xs={6}>
-                        {/* {loadCheckout()} */}
+                        <PaymentB products = {products} setReload={setReload}/>
                     </Grid>
 
                 </Grid>

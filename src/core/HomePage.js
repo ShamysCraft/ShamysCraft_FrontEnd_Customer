@@ -2,8 +2,25 @@ import React, { useState, useEffect } from "react";
 import { getProducts } from "./helper/coreapicalls"
 import Item from "../core/components/Item/Item"
 import { Grid, Typography } from "@material-ui/core"
-
+import { makeStyles } from "@material-ui/core/styles"
+const useStyles = makeStyles(()=>({
+  welcome:{
+     height: '20%', padding: '2%', backgroundColor: '#d8e2dc' ,
+    
+  },
+  heading:{
+    fontFamily: '"Lobster Two", cursive'
+  },
+  line:{
+    fontFamily: "'Spectral', serif"
+  },
+  items:{
+    padding: '1.5%'
+  }
+}))
 const HomePage = () => {
+  const classes = useStyles();
+
   // empty error
   const [products, setProducts] = useState([])
   const [error, setError] = useState("")
@@ -36,7 +53,10 @@ const HomePage = () => {
   return (
 
     <React.Fragment>
-      <Typography align="center" style={{ padding: '10px', height: '80px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Welcome to ShamysCraft</Typography>
+      <div className={classes.welcome}>
+      <Typography align="center" gutterBottom className={classes.heading} variant="h4">Welcome to ShamysCraft</Typography>
+      <Typography align="center"  className={classes.line} variant="h5">Explore the beatifully made handcrafts made just for you.</Typography>
+      </div>
       <Grid >
 
         <Grid
@@ -44,6 +64,7 @@ const HomePage = () => {
           direction="row"
           justify="start"
           alignItems="center"
+          className={classes.items}
         >
           {products && products.map((product, index) => {
 

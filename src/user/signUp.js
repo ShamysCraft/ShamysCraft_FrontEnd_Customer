@@ -228,7 +228,7 @@ const SignUpPage = (props) => {
                         </Grid>
                     </form>
 
-                    <Typography variant="h6">{JSON.stringify(Values)}</Typography>
+                    {/* <Typography variant="h6">{JSON.stringify(Values)}</Typography> */}
                 </div>
             </Container>
         </div>
