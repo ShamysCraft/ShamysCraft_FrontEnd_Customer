@@ -85,18 +85,14 @@ function PaymentB({ products, setReload = f => f, reload = undefined }) {
                 .then(response => {
                     setInfo({...info, success: response.success, loading: false})
                     console.log("Payment sucess")
+                    
                     const orderData = {
                         products: products,
                         transaction_id: response.transaction_id,
                         amount: response.transaction.amount,
                     }
-                    createOrder(userId, token, orderData).then(data=>{
-                        if(data.err){
-                            console.log("cant save data in db :(")
-                        }else{
-                            console.log("DATA", data)
-                        }
-                    })
+                    console.log("order data", orderData)
+                    createOrder(userId, token, orderData)
                     // empty cart
                     cartEmpty(()=>{
                         console.log("Did we crash->")

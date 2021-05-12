@@ -73,7 +73,7 @@ function Item({
       <Card className={classes.card}>
         {getRedirect(redirect)}
 
-        <Typography className={classes.title} gutterBottom align="center" variant="h5" component="h1">{cartTitle}</Typography>
+        <Typography className={classes.title} gutterBottom align="center" variant="h6" component="h2" >{cartTitle}</Typography>
         <div className={classes.img}>
         <ImageHelper product={product} />
         </div>
@@ -99,7 +99,7 @@ export default Item
 const useStyles = makeStyles(theme => ({
 
   card: {
-    width: '290px',
+    width: '280px',
     height: '400px',
     margin: '10px',
     padding: '5px',

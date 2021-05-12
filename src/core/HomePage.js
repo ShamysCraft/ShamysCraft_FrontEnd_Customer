@@ -48,7 +48,7 @@ const HomePage = () => {
 
   useEffect(() => {
     loadAllProducts()
-  }, [reload])
+  }, [products])
 
   return (
 

@@ -16,7 +16,7 @@ const CartPage = () => {
     const loadAllProducts = (products) => {
         return (
             <div>
-                <h2>Load Products</h2>
+                <h2>  </h2>
                 {products.map((product, index) => (
 
                     <Item
@@ -44,7 +44,7 @@ const CartPage = () => {
     return (
 
         <React.Fragment>
-            <Typography align="center" style={{ padding: '10px', height: '60px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Ready to checkout!</Typography>
+            <Typography align="center"  style={{ fontFamily: "'Spectral', serif",padding: '10px', height: '80px', paddingTop: '15px', backgroundColor: '#d8e2dc' }} variant="h4">Ready to checkout!</Typography>
 
             <Grid container style={{ flexGrow: 1 ,padding:'2%'}}>
                 <Grid container spacing={3}>
