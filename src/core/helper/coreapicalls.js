@@ -20,3 +20,6 @@ export const getCategories = () => {
             .then(response => response.json())
             .catch(err => console.log(err))
 }
+
+
+
